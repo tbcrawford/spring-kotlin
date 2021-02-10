@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="io.test.springkotlin.dao.FactsDao">
+
+    <insert id="save">
+        insert into cat_facts (
+            id
+            ,text
+            ,updatedOn
+            )
+        values (
+            #{id}
+            ,#{text}
+            ,#{updatedAt}
+        )
+    </insert>
+
+    <select id="getFacts" resultType="io.test.springkotlin.models.AnimalFact">
+        select id
+            ,text
+            ,updatedOn as updatedAt
+        from cat_facts
+    </select>
+
+</mapper>
